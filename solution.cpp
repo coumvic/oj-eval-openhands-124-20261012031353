@@ -12,9 +12,9 @@ int main() {
     int x, k, p;
     cin >> x >> k >> p;
     
-    // seats_used[i] represents the number of seats used on segment i to i+1
+    // seats_used[i] represents the number of seats used on segment i+1 to i+2
     // We need x-1 segments for x stations
-    vector<int> seats_used(x, 0);
+    vector<int> seats_used(x - 1, 0);
     
     for (int i = 0; i < p; i++) {
         int u, v, n;
