@@ -23,7 +23,7 @@ int main() {
         // Check if booking is possible
         bool can_book = true;
         for (int j = u; j < v; j++) {
-            if (seats_used[j] + n > k) {
+            if (seats_used[j-1] + n > k) {
                 can_book = false;
                 break;
             }
@@ -32,7 +32,7 @@ int main() {
         if (can_book) {
             // Book the seats
             for (int j = u; j < v; j++) {
-                seats_used[j] += n;
+                seats_used[j-1] += n;
             }
             cout << "T\n";
         } else {
