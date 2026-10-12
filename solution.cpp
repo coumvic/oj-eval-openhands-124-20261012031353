@@ -1,16 +1,12 @@
-#include <iostream>
+#include <cstdio>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 
 int main() {
-    // Fast I/O
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
     int x, k, p;
-    cin >> x >> k >> p;
+    scanf("%d %d %d", &x, &k, &p);
     
     // seats_used[i] represents the number of seats used on segment i+1 to i+2
     // We need x-1 segments for x stations
@@ -18,7 +14,7 @@ int main() {
     
     for (int i = 0; i < p; i++) {
         int u, v, n;
-        cin >> u >> v >> n;
+        scanf("%d %d %d", &u, &v, &n);
         
         // Check if booking is possible
         bool can_book = true;
@@ -34,9 +30,9 @@ int main() {
             for (int j = u; j < v; j++) {
                 seats_used[j-1] += n;
             }
-            cout << "T\n";
+            printf("T\n");
         } else {
-            cout << "N\n";
+            printf("N\n");
         }
     }
     
